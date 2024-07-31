@@ -1,0 +1,356 @@
+object LocoListForm: TLocoListForm
+  Left = 192
+  Height = 240
+  Top = 260
+  Width = 1691
+  Caption = 'Список локомотивов'
+  ClientHeight = 240
+  ClientWidth = 1691
+  DesignTimePPI = 120
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '3.2.0.0'
+  object ToolPanel: TPanel
+    Left = 2
+    Height = 40
+    Top = 2
+    Width = 1687
+    Align = alTop
+    BorderSpacing.Left = 2
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 2
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 36
+    ClientWidth = 1683
+    ParentFont = False
+    TabOrder = 0
+    object AddButton: TSpeedButton
+      Cursor = crHandPoint
+      Left = 0
+      Height = 36
+      Hint = 'Добавить'
+      Top = 0
+      Width = 40
+      Align = alLeft
+      Images = Images.PX24
+      ImageIndex = 3
+      OnClick = AddButtonClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object DelButton: TSpeedButton
+      Cursor = crHandPoint
+      Left = 40
+      Height = 36
+      Hint = 'Удалить'
+      Top = 0
+      Width = 40
+      Align = alLeft
+      Images = Images.PX24
+      ImageIndex = 4
+      OnClick = DelButtonClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object EditButton: TSpeedButton
+      Cursor = crHandPoint
+      Left = 80
+      Height = 36
+      Hint = 'Редактировать'
+      Top = 0
+      Width = 40
+      Align = alLeft
+      Images = Images.PX24
+      ImageIndex = 5
+      OnClick = EditButtonClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object ConfigButton: TSpeedButton
+      Cursor = crHandPoint
+      Left = 120
+      Height = 36
+      Hint = 'Переконфигурировать'
+      Top = 0
+      Width = 40
+      Align = alLeft
+      Images = Images.PX24
+      ImageIndex = 19
+      OnClick = ConfigButtonClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object DividerBevel1: TDividerBevel
+      Left = 160
+      Height = 36
+      Top = 0
+      Width = 20
+      Caption = 'DividerBevel1'
+      Align = alLeft
+      BevelWidth = 1
+      Font.Style = [fsBold]
+      Orientation = trVertical
+      ParentFont = False
+    end
+    object FilterPanel: TPanel
+      Left = 240
+      Height = 36
+      Top = 0
+      Width = 1443
+      Align = alClient
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 36
+      ClientWidth = 1443
+      ParentBackground = False
+      TabOrder = 0
+      object FilterLabel: TLabel
+        AnchorSideLeft.Control = FilterPanel
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 4
+        Height = 20
+        Top = 8
+        Width = 59
+        BorderSpacing.Left = 4
+        Caption = 'Фильтр:'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object LocoTypeLabel: TLabel
+        AnchorSideLeft.Control = FilterLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 78
+        Height = 20
+        Top = 8
+        Width = 41
+        BorderSpacing.Left = 15
+        Caption = 'серия'
+      end
+      object LocoTypeComboBox: TComboBox
+        AnchorSideLeft.Control = LocoTypeLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 125
+        Height = 28
+        Top = 4
+        Width = 200
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 4
+        BorderSpacing.Bottom = 8
+        DropDownCount = 20
+        ItemHeight = 20
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 0
+        OnChange = LocoTypeComboBoxChange
+      end
+      object LocoNumLabel: TLabel
+        AnchorSideLeft.Control = LocoTypeComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 331
+        Height = 20
+        Top = 8
+        Width = 17
+        BorderSpacing.Left = 6
+        Caption = '№'
+        ParentColor = False
+        ParentFont = False
+      end
+      object LocoNumEdit: TEdit
+        AnchorSideLeft.Control = LocoNumLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 354
+        Height = 28
+        Top = 4
+        Width = 150
+        BorderSpacing.Left = 6
+        ParentFont = False
+        TabOrder = 1
+        OnChange = LocoNumEditChange
+      end
+      object ConfigLabel: TLabel
+        AnchorSideLeft.Control = LocoNumEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 514
+        Height = 20
+        Top = 8
+        Width = 100
+        BorderSpacing.Left = 10
+        Caption = 'конфигурация'
+      end
+      object ConfigComboBox: TComboBox
+        AnchorSideLeft.Control = ConfigLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 620
+        Height = 28
+        Top = 4
+        Width = 200
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 4
+        BorderSpacing.Bottom = 8
+        DropDownCount = 20
+        ItemHeight = 20
+        ItemIndex = 2
+        Items.Strings = (
+          'ВСЕ КОНФИГУРАЦИИ'
+          'старая'
+          'действующая'
+        )
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 2
+        Text = 'действующая'
+        OnChange = ConfigComboBoxChange
+      end
+      object DepoLabel: TLabel
+        AnchorSideLeft.Control = ConfigComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 830
+        Height = 20
+        Top = 8
+        Width = 34
+        BorderSpacing.Left = 10
+        Caption = 'депо'
+      end
+      object DepoComboBox: TComboBox
+        AnchorSideLeft.Control = DepoLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 870
+        Height = 28
+        Top = 4
+        Width = 200
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 4
+        BorderSpacing.Bottom = 8
+        DropDownCount = 20
+        ItemHeight = 20
+        Items.Strings = (
+          ''
+        )
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 3
+        OnChange = DepoComboBoxChange
+      end
+      object AptLabel: TLabel
+        AnchorSideLeft.Control = DepoComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        Left = 1080
+        Height = 20
+        Top = 8
+        Width = 89
+        BorderSpacing.Left = 10
+        Caption = 'система АПТ'
+      end
+      object AptComboBox: TComboBox
+        AnchorSideLeft.Control = AptLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 1175
+        Height = 28
+        Top = 4
+        Width = 200
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 4
+        BorderSpacing.Bottom = 8
+        DropDownCount = 20
+        ItemHeight = 20
+        Items.Strings = (
+          ''
+        )
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 4
+        OnChange = AptComboBoxChange
+      end
+      object FilterClearButton: TSpeedButton
+        AnchorSideLeft.Control = AptComboBox
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = FilterPanel
+        AnchorSideBottom.Control = FilterPanel
+        AnchorSideBottom.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 1381
+        Height = 36
+        Hint = 'Очистить фильтр'
+        Top = 0
+        Width = 40
+        Align = alCustom
+        Anchors = [akTop, akLeft, akBottom]
+        BorderSpacing.Left = 6
+        Images = Images.PX24
+        ImageIndex = 8
+        Visible = False
+        OnClick = FilterClearButtonClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object ExportButton: TSpeedButton
+      Cursor = crHandPoint
+      Left = 180
+      Height = 36
+      Hint = 'Экспорт в файл'
+      Top = 0
+      Width = 40
+      Align = alLeft
+      Images = Images.PX24
+      ImageIndex = 10
+      OnClick = ExportButtonClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object DividerBevel2: TDividerBevel
+      Left = 220
+      Height = 36
+      Top = 0
+      Width = 20
+      Caption = 'DividerBevel2'
+      Align = alLeft
+      BevelWidth = 1
+      Font.Style = [fsBold]
+      Orientation = trVertical
+      ParentFont = False
+    end
+  end
+  object VT: TVirtualStringTree
+    Left = 2
+    Height = 194
+    Top = 44
+    Width = 1687
+    Align = alClient
+    BorderSpacing.Around = 2
+    DefaultNodeHeight = 25
+    DefaultText = 'Node'
+    Header.AutoSizeIndex = 0
+    Header.Columns = <>
+    Header.MainColumn = -1
+    TabOrder = 1
+    OnNodeDblClick = VTNodeDblClick
+  end
+end

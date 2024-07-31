@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="DKApt"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes>
+      <Item Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="DKUIUtils"/>
+      </Item>
+      <Item>
+        <PackageName Value="DKSpreadSheet"/>
+      </Item>
+      <Item>
+        <PackageName Value="laz_fpspreadsheet_visual_dsgn"/>
+      </Item>
+      <Item>
+        <PackageName Value="laz_fpspreadsheet_visual"/>
+      </Item>
+      <Item>
+        <PackageName Value="DateTimeCtrlsDsgn"/>
+      </Item>
+      <Item>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item>
+      <Item>
+        <PackageName Value="virtualtreeview_package"/>
+      </Item>
+      <Item>
+        <PackageName Value="LazControls"/>
+      </Item>
+      <Item>
+        <PackageName Value="LazControlDsgn"/>
+      </Item>
+      <Item>
+        <PackageName Value="bgracontrols"/>
+      </Item>
+      <Item>
+        <PackageName Value="DKUtils"/>
+      </Item>
+      <Item>
+        <PackageName Value="DKDatabase"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="DKApt.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UMainForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\udatabase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UDataBase"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uimages.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Images"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UImages"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\uuiutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UUiUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\ulocolistform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LocoListForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ULocoListForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\utables.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UTables"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\ulocoeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LocoEditForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ULocoEditForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\uapputils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UAppUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\ureportform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ReportForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UReportForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\ulogform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LogForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ULogForm"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utils\usheets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="USheets"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\uaboutform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AboutForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAboutForm"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="DKApt"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="utils;forms"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <DebugInfoType Value="dsDwarf3"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

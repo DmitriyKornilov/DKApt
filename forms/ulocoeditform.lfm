@@ -1,0 +1,260 @@
+object LocoEditForm: TLocoEditForm
+  Left = 675
+  Height = 250
+  Top = 249
+  Width = 470
+  AutoSize = True
+  Caption = 'Локомотив'
+  ClientHeight = 250
+  ClientWidth = 470
+  DesignTimePPI = 120
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '3.2.0.0'
+  object ButtonPanel: TPanel
+    AnchorSideTop.Side = asrBottom
+    Left = 2
+    Height = 36
+    Top = 208
+    Width = 466
+    Align = alBottom
+    Anchors = [akLeft, akRight]
+    AutoSize = True
+    BorderSpacing.Left = 2
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 2
+    BorderSpacing.Bottom = 6
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 466
+    TabOrder = 0
+    object CancelButton: TSpeedButton
+      AnchorSideTop.Control = ButtonPanelBevel
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = ButtonPanel
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 360
+      Height = 28
+      Top = 8
+      Width = 100
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      Caption = 'Отменить'
+      Images = Images.PX24
+      ImageIndex = 7
+      OnClick = CancelButtonClick
+      ParentFont = False
+    end
+    object SaveButton: TSpeedButton
+      AnchorSideTop.Control = CancelButton
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = CancelButton
+      Cursor = crHandPoint
+      Left = 254
+      Height = 28
+      Top = 8
+      Width = 106
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Caption = 'Сохранить'
+      Images = Images.PX24
+      ImageIndex = 6
+      OnClick = SaveButtonClick
+      ParentFont = False
+    end
+    object ButtonPanelBevel: TBevel
+      Left = 0
+      Height = 8
+      Top = 0
+      Width = 466
+      Align = alTop
+      Shape = bsTopLine
+    end
+  end
+  object LocoTypeLabel: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = LocoTypeComboBox
+    AnchorSideTop.Side = asrCenter
+    Left = 6
+    Height = 20
+    Top = 12
+    Width = 43
+    BorderSpacing.Left = 6
+    Caption = 'Серия'
+    ParentColor = False
+  end
+  object LocoTypeComboBox: TComboBox
+    AnchorSideLeft.Control = LocoTypeLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    Left = 55
+    Height = 28
+    Top = 8
+    Width = 200
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 8
+    Constraints.MinWidth = 188
+    DropDownCount = 20
+    ItemHeight = 20
+    Style = csDropDownList
+    TabOrder = 1
+    OnChange = LocoTypeComboBoxChange
+  end
+  object LocoNumLabel: TLabel
+    AnchorSideLeft.Control = LocoTypeComboBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = LocoTypeComboBox
+    AnchorSideTop.Side = asrCenter
+    Left = 261
+    Height = 20
+    Top = 12
+    Width = 48
+    BorderSpacing.Left = 6
+    Caption = 'Номер'
+    ParentColor = False
+  end
+  object LocoNumEdit: TEdit
+    AnchorSideLeft.Control = LocoNumLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = LocoTypeComboBox
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 315
+    Height = 28
+    Top = 8
+    Width = 150
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Right = 6
+    Constraints.MinWidth = 150
+    MaxLength = 15
+    TabOrder = 2
+  end
+  object AptLabel: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = AptComboBox
+    AnchorSideTop.Side = asrCenter
+    Left = 6
+    Height = 20
+    Top = 88
+    Width = 29
+    BorderSpacing.Left = 6
+    Caption = 'АПТ'
+    ParentColor = False
+  end
+  object AptComboBox: TComboBox
+    AnchorSideLeft.Control = LocoTypeLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = DepoComboBox
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LocoNumEdit
+    AnchorSideRight.Side = asrBottom
+    Left = 55
+    Height = 28
+    Top = 84
+    Width = 410
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 10
+    ItemHeight = 20
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object SecLabel: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Sec1CheckBox
+    AnchorSideTop.Side = asrCenter
+    Left = 8
+    Height = 20
+    Top = 145
+    Width = 96
+    BorderSpacing.Left = 8
+    Caption = 'Оборудовано'
+    ParentColor = False
+  end
+  object Sec1CheckBox: TCheckBox
+    AnchorSideLeft.Control = SecLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AptComboBox
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel
+    Left = 112
+    Height = 66
+    Top = 122
+    Width = 83
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 10
+    BorderSpacing.Bottom = 8
+    Caption = 'Секция 1'
+    Checked = True
+    State = cbChecked
+    TabOrder = 4
+  end
+  object Sec2CheckBox: TCheckBox
+    AnchorSideLeft.Control = Sec1CheckBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Sec1CheckBox
+    AnchorSideTop.Side = asrCenter
+    Left = 203
+    Height = 24
+    Top = 143
+    Width = 83
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 8
+    Caption = 'Секция 2'
+    TabOrder = 5
+  end
+  object Sec3CheckBox: TCheckBox
+    AnchorSideLeft.Control = Sec2CheckBox
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Sec1CheckBox
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 294
+    Height = 24
+    Top = 143
+    Width = 168
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 8
+    Caption = 'Прицепная секция'
+    TabOrder = 6
+  end
+  object DepoComboBox: TComboBox
+    AnchorSideLeft.Control = LocoTypeLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = LocoTypeComboBox
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = LocoNumEdit
+    AnchorSideRight.Side = asrBottom
+    Left = 55
+    Height = 28
+    Top = 46
+    Width = 410
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 6
+    BorderSpacing.Top = 10
+    ItemHeight = 20
+    Style = csDropDownList
+    TabOrder = 7
+  end
+  object DepoLabel: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = DepoComboBox
+    AnchorSideTop.Side = asrCenter
+    Left = 6
+    Height = 20
+    Top = 50
+    Width = 36
+    BorderSpacing.Left = 6
+    Caption = 'Депо'
+    ParentColor = False
+  end
+end
