@@ -52,8 +52,7 @@ type
     procedure LocoNumEditChange(Sender: TObject);
     procedure LocoNumEditKeyDown(Sender: TObject; var Key: Word;
       {%H-}Shift: TShiftState);
-    procedure LocoVTNodeDblClick(Sender: TBaseVirtualTree;
-      const {%H-}HitInfo: THitInfo);
+    procedure LocoVTDblClick(Sender: TObject);
     procedure LogAddButtonClick(Sender: TObject);
     procedure LogCancelButtonClick(Sender: TObject);
     procedure LogDelButtonClick(Sender: TObject);
@@ -159,8 +158,7 @@ begin
   LocoVT.SetFocus;
 end;
 
-procedure TLogForm.LocoVTNodeDblClick(Sender: TBaseVirtualTree;
-  const HitInfo: THitInfo);
+procedure TLogForm.LocoVTDblClick(Sender: TObject);
 begin
   LogAdd;
 end;
@@ -343,7 +341,8 @@ begin
   Log.Draw;
 
   V:= Statistic(LogSectionCounts, LogTONames, LogManNames, LogSubManNames);
-  VtoStrings(V, StatisticMemo.Lines);
+  VToStrings(V, StatisticMemo.Lines);
+  StatisticMemo.SelStart:= 0;
 end;
 
 procedure TLogForm.LogAdd;

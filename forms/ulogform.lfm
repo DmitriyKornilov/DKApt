@@ -431,7 +431,7 @@ object LogForm: TLogForm
       Header.Columns = <>
       Header.MainColumn = -1
       TabOrder = 7
-      OnNodeDblClick = LocoVTNodeDblClick
+      OnDblClick = LocoVTDblClick
     end
     object EditingToolPanel: TPanel
       Left = 0

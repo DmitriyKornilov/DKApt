@@ -351,6 +351,6 @@ object LocoListForm: TLocoListForm
     Header.Columns = <>
     Header.MainColumn = -1
     TabOrder = 1
-    OnNodeDblClick = VTNodeDblClick
+    OnDblClick = VTDblClick
   end
 end

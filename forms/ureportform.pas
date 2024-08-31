@@ -219,7 +219,6 @@ end;
 procedure TReportForm.LogCreate;
 begin
   Log:= TReportTable.Create(VT);
-  Log.CanSelect:= True;
   Log.HeaderFont.Style:= [fsBold];
   Log.Draw;
 end;
@@ -260,7 +259,8 @@ begin
   Log.Draw;
 
   V:= Statistic(LogSectionCounts, LogTONames, LogManNames, LogSubManNames);
-  VtoStrings(V, StatisticMemo.Lines);
+  VToStrings(V, StatisticMemo.Lines);
+  StatisticMemo.SelStart:= 0;
 end;
 
 procedure TReportForm.ReportDraw(const AZoomPercent: Integer);

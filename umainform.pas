@@ -195,7 +195,11 @@ begin
                           True, ['LocoType'], 1{, nil, nil, GridFont});
     4: IsOK:= DataBase.EditList('Депо приписки',
                 'DEPO', 'DepoID', 'DepoName', True, True{, 400, GridFont});
-    5: FormModalShow(TLocoListForm);
+    5:
+      begin
+        IsOK:= True;
+        FormModalShow(TLocoListForm);
+      end;
     6: IsOK:= DataBase.EditTable('Основные исполнители',
                           'WORKERS', 'ManID',
                           ['ManName',      'ShiftNum'     ],

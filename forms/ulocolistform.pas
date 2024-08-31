@@ -54,7 +54,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure LocoNumEditChange(Sender: TObject);
     procedure LocoTypeComboBoxChange(Sender: TObject);
-    procedure VTNodeDblClick(Sender: TBaseVirtualTree; const {%H-}HitInfo: THitInfo);
+    procedure VTDblClick(Sender: TObject);
   private
     CanLoad: Boolean;
 
@@ -255,7 +255,7 @@ begin
   FilterApply;
 end;
 
-procedure TLocoListForm.VTNodeDblClick(Sender: TBaseVirtualTree; const HitInfo: THitInfo);
+procedure TLocoListForm.VTDblClick(Sender: TObject);
 begin
   if not LocoList.IsSelected then Exit;
   LocoEditFormOpen(1);
