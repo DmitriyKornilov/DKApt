@@ -98,7 +98,7 @@ begin
     ToolPanel
   ]);
   SetToolButtons([
-    AddButton, DelButton, EditButton, ConfigButton
+    AddButton, DelButton, EditButton, ConfigButton, ExportButton, FilterClearButton
   ]);
 
   CanLoad:= False;
