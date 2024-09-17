@@ -88,7 +88,7 @@ object LocoListForm: TLocoListForm
       Width = 20
       Caption = 'DividerBevel1'
       Align = alLeft
-      BevelWidth = 1
+      BevelWidth = 2
       Font.Style = [fsBold]
       Orientation = trVertical
       ParentFont = False
@@ -332,7 +332,7 @@ object LocoListForm: TLocoListForm
       Width = 20
       Caption = 'DividerBevel2'
       Align = alLeft
-      BevelWidth = 1
+      BevelWidth = 2
       Font.Style = [fsBold]
       Orientation = trVertical
       ParentFont = False

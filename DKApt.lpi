@@ -92,11 +92,6 @@
         <UnitName Value="UImages"/>
       </Unit>
       <Unit>
-        <Filename Value="utils\uuiutils.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="UUiUtils"/>
-      </Unit>
-      <Unit>
         <Filename Value="forms\ulocolistform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="LocoListForm"/>

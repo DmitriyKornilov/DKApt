@@ -6,12 +6,12 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  StdCtrls, fpspreadsheetgrid, DividerBevel, DateTimePicker, BCPanel,
+  StdCtrls, fpspreadsheetgrid, DividerBevel, DateTimePicker,
   VirtualTrees,
   //DK packages utils
-  DK_Vector, DK_VSTTypes, DK_Zoom, DK_StrUtils, DK_SheetExporter,
+  DK_Vector, DK_VSTTypes, DK_CtrlUtils, DK_Zoom, DK_StrUtils, DK_SheetExporter,
   //Project utils
-  UDataBase, UUiUtils, UAppUtils, UTables, USheets;
+  UDataBase, UImages, UAppUtils, UTables, USheets;
 
 type
 
@@ -20,10 +20,10 @@ type
   TReportForm = class(TForm)
     BeginDatePicker: TDateTimePicker;
     BeginShiftComboBox: TComboBox;
-    CaptionPanel: TBCPanel;
     DividerBevel1: TDividerBevel;
     DividerBevel2: TDividerBevel;
     DividerBevel3: TDividerBevel;
+    CaptionPanel: TPanel;
     EndDatePicker: TDateTimePicker;
     EndShiftComboBox: TComboBox;
     ExportButton: TSpeedButton;
@@ -105,6 +105,10 @@ begin
   ]);
   SetCaptionPanels([
     CaptionPanel
+  ]);
+
+  Images.ToButtons([
+    ExportButton, PlaceSaveButton, PlaceCancelButton
   ]);
 end;
 

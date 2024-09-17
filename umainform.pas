@@ -5,12 +5,12 @@ unit UMainForm;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, BCButton,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   Buttons, Menus, DividerBevel,
   //DK packages utils
   {DK_HeapTrace,} DK_LCLStrRus, DK_Fonts, DK_CtrlUtils, DK_VSTTypes,
   //Project utils
-  UDataBase, UUiUtils,
+  UDataBase, UImages,
   //Forms
   ULogForm, UReportForm, ULocoListForm, UAboutForm;
 
@@ -20,16 +20,16 @@ type
 
   TMainForm = class(TForm)
     AboutButton: TSpeedButton;
-    LogButton: TBCButton;
-    DictionaryButton: TBCButton;
+    LogButton: TSpeedButton;
     DictionaryMenu: TPopupMenu;
     DividerBevel1: TDividerBevel;
     DividerBevel2: TDividerBevel;
+    ReportButton: TSpeedButton;
     MainPanel: TPanel;
     ExitButton: TSpeedButton;
     AptListMenuItem: TMenuItem;
     DepoListMenuItem: TMenuItem;
-    ReportButton: TBCButton;
+    DictionaryButton: TSpeedButton;
     TOTypeListMenuItem: TMenuItem;
     RefreshButton: TSpeedButton;
     Separator1: TMenuItem;
@@ -97,11 +97,14 @@ begin
   SetToolButtons([
     RefreshButton, AboutButton, ExitButton
   ]);
-  SetCategoryButtons([
+
+  Images.ToButtons([
+    RefreshButton, AboutButton, ExitButton,
     DictionaryButton, ReportButton, LogButton
   ]);
 
-  DictionaryMenu.Images:= ImageListForScreen;
+
+  DictionaryMenu.Images:= Images.ForCurrentPPI;
 
   CategorySelect(1);
 end;
@@ -241,14 +244,14 @@ begin
       2: CategoryForm:= FormOnPanelCreate(TReportForm, MainPanel);
     end;
 
-    LogButton.Down:= False;
-    ReportButton.Down:= False;
+    //LogButton.Down:= False;
+    //ReportButton.Down:= False;
     if Assigned(CategoryForm) then
     begin
-      case Category of
-        1: LogButton.Down:= True;
-        2: ReportButton.Down:= True;
-      end;
+      //case Category of
+      //  1: LogButton.Down:= True;
+      //  2: ReportButton.Down:= True;
+      //end;
 
       CategoryForm.Show;
       ViewUpdate;

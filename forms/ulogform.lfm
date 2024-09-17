@@ -21,54 +21,6 @@ object LogForm: TLogForm
     ClientHeight = 415
     ClientWidth = 1372
     TabOrder = 0
-    object LogCaptionPanel: TBCPanel
-      Left = 2
-      Height = 30
-      Top = 2
-      Width = 1368
-      Align = alTop
-      BorderSpacing.Left = 2
-      BorderSpacing.Top = 2
-      BorderSpacing.Right = 2
-      BorderSpacing.Bottom = 2
-      Background.Color = clBtnFace
-      Background.Gradient1.StartColor = clWhite
-      Background.Gradient1.EndColor = clBlack
-      Background.Gradient1.GradientType = gtLinear
-      Background.Gradient1.Point1XPercent = 0
-      Background.Gradient1.Point1YPercent = 0
-      Background.Gradient1.Point2XPercent = 0
-      Background.Gradient1.Point2YPercent = 100
-      Background.Gradient2.StartColor = clWhite
-      Background.Gradient2.EndColor = clBlack
-      Background.Gradient2.GradientType = gtLinear
-      Background.Gradient2.Point1XPercent = 0
-      Background.Gradient2.Point1YPercent = 0
-      Background.Gradient2.Point2XPercent = 0
-      Background.Gradient2.Point2YPercent = 100
-      Background.Gradient1EndPercent = 35
-      Background.Style = bbsColor
-      BevelInner = bvNone
-      BevelOuter = bvNone
-      BevelWidth = 1
-      Border.Color = clActiveBorder
-      Border.Style = bboSolid
-      BorderBCStyle = bpsBorder
-      Caption = 'Журнал за 01.01.2001 (дневная смена)'
-      FontEx.Color = clDefault
-      FontEx.FontQuality = fqSystemClearType
-      FontEx.Shadow = False
-      FontEx.ShadowRadius = 5
-      FontEx.ShadowOffsetX = 5
-      FontEx.ShadowOffsetY = 5
-      FontEx.Style = [fsBold]
-      FontEx.TextAlignment = bcaLeftCenter
-      FontEx.PaddingLeft = 10
-      ParentBackground = False
-      Rounding.RoundX = 1
-      Rounding.RoundY = 1
-      TabOrder = 0
-    end
     object LogPanel: TPanel
       Left = 2
       Height = 379
@@ -79,7 +31,7 @@ object LogForm: TLogForm
       BevelOuter = bvNone
       ClientHeight = 379
       ClientWidth = 1368
-      TabOrder = 1
+      TabOrder = 0
       object StatisticMemo: TMemo
         Left = 0
         Height = 188
@@ -113,6 +65,23 @@ object LogForm: TLogForm
         Header.MainColumn = -1
         TabOrder = 2
       end
+    end
+    object LogCaptionPanel: TPanel
+      Left = 2
+      Height = 30
+      Top = 2
+      Width = 1368
+      Align = alTop
+      Alignment = taLeftJustify
+      BorderSpacing.Left = 2
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 2
+      BevelOuter = bvNone
+      BorderStyle = bsSingle
+      Caption = '  Журнал за 01.01.2001 (дневная смена)'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
     end
   end
   object Splitter1: TSplitter
@@ -497,52 +466,21 @@ object LogForm: TLogForm
       end
     end
   end
-  object EditingCaptionPanel: TBCPanel
+  object EditingCaptionPanel: TPanel
     Left = 2
     Height = 30
     Top = 2
     Width = 1368
     Align = alTop
+    Alignment = taLeftJustify
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2
     BorderSpacing.Right = 2
-    BorderSpacing.Bottom = 2
-    Background.Color = clBtnFace
-    Background.Gradient1.StartColor = clWhite
-    Background.Gradient1.EndColor = clBlack
-    Background.Gradient1.GradientType = gtLinear
-    Background.Gradient1.Point1XPercent = 0
-    Background.Gradient1.Point1YPercent = 0
-    Background.Gradient1.Point2XPercent = 0
-    Background.Gradient1.Point2YPercent = 100
-    Background.Gradient2.StartColor = clWhite
-    Background.Gradient2.EndColor = clBlack
-    Background.Gradient2.GradientType = gtLinear
-    Background.Gradient2.Point1XPercent = 0
-    Background.Gradient2.Point1YPercent = 0
-    Background.Gradient2.Point2XPercent = 0
-    Background.Gradient2.Point2YPercent = 100
-    Background.Gradient1EndPercent = 35
-    Background.Style = bbsColor
-    BevelInner = bvNone
     BevelOuter = bvNone
-    BevelWidth = 1
-    Border.Color = clActiveBorder
-    Border.Style = bboSolid
-    BorderBCStyle = bpsBorder
-    Caption = 'Редактирование журнала'
-    FontEx.Color = clDefault
-    FontEx.FontQuality = fqSystemClearType
-    FontEx.Shadow = False
-    FontEx.ShadowRadius = 5
-    FontEx.ShadowOffsetX = 5
-    FontEx.ShadowOffsetY = 5
-    FontEx.Style = [fsBold]
-    FontEx.TextAlignment = bcaLeftCenter
-    FontEx.PaddingLeft = 10
-    ParentBackground = False
-    Rounding.RoundX = 1
-    Rounding.RoundY = 1
+    BorderStyle = bsSingle
+    Caption = '  Редактирование журнала'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 3
   end
 end

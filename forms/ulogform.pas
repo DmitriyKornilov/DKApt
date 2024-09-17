@@ -6,18 +6,18 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  BCPanel, VirtualTrees, Buttons, DateTimePicker, LCLType, DateUtils,
+  VirtualTrees, Buttons, DateTimePicker, LCLType, DateUtils,
   //DK packages utils
-  DK_Vector, DK_StrUtils,
+  DK_Vector, DK_StrUtils, DK_CtrlUtils,
   //Project utils
-  UDataBase, UUiUtils, UAppUtils, UTables;
+  UDataBase, UImages, UAppUtils, UTables;
 
 type
 
   { TLogForm }
 
   TLogForm = class(TForm)
-    EditingCaptionPanel: TBCPanel;
+    LogCaptionPanel: TPanel;
     EditingPanel: TPanel;
     EditingToolPanel: TPanel;
     LocoNumEdit: TEdit;
@@ -28,12 +28,12 @@ type
     LogAddButton: TSpeedButton;
     LogCancelButton: TSpeedButton;
     LogDelButton: TSpeedButton;
-    LogCaptionPanel: TBCPanel;
     LogPanel: TPanel;
     LogVT: TVirtualStringTree;
     MainPanel: TPanel;
     ManComboBox: TComboBox;
     ManLabel: TLabel;
+    EditingCaptionPanel: TPanel;
     StatisticMemo: TMemo;
     NextShiftButton: TSpeedButton;
     PrevShiftButton: TSpeedButton;
@@ -135,6 +135,10 @@ begin
   ]);
   SetCaptionPanels([
     EditingCaptionPanel, LogCaptionPanel
+  ]);
+
+  Images.ToButtons([
+    LogAddButton, LogCancelButton, LogDelButton
   ]);
 end;
 
@@ -314,7 +318,7 @@ begin
   Log.ValuesClear;
   StatisticMemo.Lines.Clear;
 
-  LogCaptionPanel.Caption:= 'Журнал за ' + ShiftDateToStr(ShiftDate) + ' (' +
+  LogCaptionPanel.Caption:= '  Журнал за ' + ShiftDateToStr(ShiftDate) + ' (' +
                             ShiftComboBox.Text + ' смена)';
 
   BD:= CalcBeginDT(ShiftDatePicker.Date, ShiftComboBox.ItemIndex);

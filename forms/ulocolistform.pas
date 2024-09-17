@@ -10,7 +10,7 @@ uses
   //DK packages utils
   DK_CtrlUtils, DK_Vector, DK_VSTTables, DK_VSTTypes, DK_StrUtils, DK_Dialogs,
   //Project utils
-  UDataBase, UUiUtils, UTables,
+  UDataBase, UImages, UTables,
   //Forms
   ULocoEditForm;
 
@@ -98,6 +98,10 @@ begin
     ToolPanel
   ]);
   SetToolButtons([
+    AddButton, DelButton, EditButton, ConfigButton, ExportButton, FilterClearButton
+  ]);
+
+  Images.ToButtons([
     AddButton, DelButton, EditButton, ConfigButton, ExportButton, FilterClearButton
   ]);
 

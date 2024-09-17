@@ -10,7 +10,7 @@ uses
   //DK packages utils
   DK_StrUtils, DK_Dialogs, DK_Vector,
   //Project utils
-  UDataBase, UUiUtils;
+  UDataBase, UImages;
 
 type
 
@@ -57,7 +57,7 @@ implementation
 
 procedure TLocoEditForm.FormShow(Sender: TObject);
 begin
-  SetEditButtons([SaveButton, CancelButton]);
+  Images.ToButtons([SaveButton, CancelButton]);
   Constraints.MinHeight:= Height;
   Constraints.MinWidth:= Width;
 

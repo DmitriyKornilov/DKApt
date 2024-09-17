@@ -11,54 +11,6 @@ object ReportForm: TReportForm
   OnDestroy = FormDestroy
   OnShow = FormShow
   LCLVersion = '3.2.0.0'
-  object CaptionPanel: TBCPanel
-    Left = 2
-    Height = 30
-    Top = 2
-    Width = 1355
-    Align = alTop
-    BorderSpacing.Left = 2
-    BorderSpacing.Top = 2
-    BorderSpacing.Right = 2
-    BorderSpacing.Bottom = 2
-    Background.Color = clBtnFace
-    Background.Gradient1.StartColor = clWhite
-    Background.Gradient1.EndColor = clBlack
-    Background.Gradient1.GradientType = gtLinear
-    Background.Gradient1.Point1XPercent = 0
-    Background.Gradient1.Point1YPercent = 0
-    Background.Gradient1.Point2XPercent = 0
-    Background.Gradient1.Point2YPercent = 100
-    Background.Gradient2.StartColor = clWhite
-    Background.Gradient2.EndColor = clBlack
-    Background.Gradient2.GradientType = gtLinear
-    Background.Gradient2.Point1XPercent = 0
-    Background.Gradient2.Point1YPercent = 0
-    Background.Gradient2.Point2XPercent = 0
-    Background.Gradient2.Point2YPercent = 100
-    Background.Gradient1EndPercent = 35
-    Background.Style = bbsColor
-    BevelInner = bvNone
-    BevelOuter = bvNone
-    BevelWidth = 1
-    Border.Color = clActiveBorder
-    Border.Style = bboSolid
-    BorderBCStyle = bpsBorder
-    Caption = 'Отчет за период'
-    FontEx.Color = clDefault
-    FontEx.FontQuality = fqSystemClearType
-    FontEx.Shadow = False
-    FontEx.ShadowRadius = 5
-    FontEx.ShadowOffsetX = 5
-    FontEx.ShadowOffsetY = 5
-    FontEx.Style = [fsBold]
-    FontEx.TextAlignment = bcaLeftCenter
-    FontEx.PaddingLeft = 10
-    ParentBackground = False
-    Rounding.RoundX = 1
-    Rounding.RoundY = 1
-    TabOrder = 0
-  end
   object ToolPanel: TPanel
     Left = 2
     Height = 40
@@ -70,7 +22,7 @@ object ReportForm: TReportForm
     BorderStyle = bsSingle
     ClientHeight = 36
     ClientWidth = 1351
-    TabOrder = 1
+    TabOrder = 0
     object ExportButton: TSpeedButton
       Cursor = crHandPoint
       Left = 0
@@ -89,16 +41,16 @@ object ReportForm: TReportForm
       Left = 40
       Height = 36
       Top = 0
-      Width = 20
+      Width = 21
       Caption = 'DividerBevel1'
       Align = alLeft
-      BevelWidth = 1
+      BevelWidth = 2
       Font.Style = [fsBold]
       Orientation = trVertical
       ParentFont = False
     end
     object PeriodPanel: TPanel
-      Left = 60
+      Left = 61
       Height = 36
       Top = 0
       Width = 482
@@ -231,19 +183,19 @@ object ReportForm: TReportForm
       end
     end
     object DividerBevel2: TDividerBevel
-      Left = 542
+      Left = 543
       Height = 36
       Top = 0
-      Width = 20
+      Width = 21
       Caption = 'DividerBevel2'
       Align = alLeft
-      BevelWidth = 1
+      BevelWidth = 2
       Font.Style = [fsBold]
       Orientation = trVertical
       ParentFont = False
     end
     object ViewPanel: TPanel
-      Left = 562
+      Left = 564
       Height = 36
       Top = 0
       Width = 172
@@ -295,19 +247,19 @@ object ReportForm: TReportForm
       end
     end
     object DividerBevel3: TDividerBevel
-      Left = 734
+      Left = 736
       Height = 36
       Top = 0
-      Width = 20
+      Width = 21
       Caption = 'DividerBevel3'
       Align = alLeft
-      BevelWidth = 1
+      BevelWidth = 2
       Font.Style = [fsBold]
       Orientation = trVertical
       ParentFont = False
     end
     object PlacePanel: TPanel
-      Left = 754
+      Left = 757
       Height = 36
       Top = 0
       Width = 448
@@ -396,7 +348,7 @@ object ReportForm: TReportForm
     BevelOuter = bvNone
     ClientHeight = 614
     ClientWidth = 1355
-    TabOrder = 2
+    TabOrder = 1
     object StatisticMemo: TMemo
       Left = 0
       Height = 188
@@ -514,5 +466,22 @@ object ReportForm: TReportForm
         end
       end
     end
+  end
+  object CaptionPanel: TPanel
+    Left = 2
+    Height = 30
+    Top = 2
+    Width = 1355
+    Align = alTop
+    Alignment = taLeftJustify
+    BorderSpacing.Left = 2
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 2
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    Caption = '  Отчет за период'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
   end
 end
