@@ -1,31 +1,32 @@
 object LocoEditForm: TLocoEditForm
   Left = 675
-  Height = 250
+  Height = 241
   Top = 249
   Width = 470
   AutoSize = True
   Caption = 'Локомотив'
-  ClientHeight = 250
+  ClientHeight = 241
   ClientWidth = 470
   DesignTimePPI = 120
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '3.2.0.0'
   object ButtonPanel: TPanel
+    AnchorSideTop.Control = Sec1CheckBox
     AnchorSideTop.Side = asrBottom
     Left = 2
-    Height = 42
-    Top = 202
+    Height = 69
+    Top = 166
     Width = 466
     Align = alBottom
-    Anchors = [akLeft, akRight]
+    Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     BorderSpacing.Left = 2
     BorderSpacing.Top = 20
     BorderSpacing.Right = 2
     BorderSpacing.Bottom = 6
     BevelOuter = bvNone
-    ClientHeight = 42
+    ClientHeight = 69
     ClientWidth = 466
     TabOrder = 0
     object CancelButton: TSpeedButton
@@ -174,7 +175,7 @@ object LocoEditForm: TLocoEditForm
     AnchorSideTop.Side = asrCenter
     Left = 8
     Height = 20
-    Top = 142
+    Top = 124
     Width = 96
     BorderSpacing.Left = 8
     Caption = 'Оборудовано'
@@ -187,10 +188,9 @@ object LocoEditForm: TLocoEditForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = ButtonPanel
     Left = 112
-    Height = 60
+    Height = 24
     Top = 122
     Width = 83
-    Anchors = [akTop, akLeft, akBottom]
     BorderSpacing.Left = 8
     BorderSpacing.Top = 10
     BorderSpacing.Bottom = 8
@@ -206,7 +206,7 @@ object LocoEditForm: TLocoEditForm
     AnchorSideTop.Side = asrCenter
     Left = 203
     Height = 24
-    Top = 140
+    Top = 122
     Width = 83
     BorderSpacing.Left = 8
     BorderSpacing.Top = 8
@@ -222,7 +222,7 @@ object LocoEditForm: TLocoEditForm
     AnchorSideRight.Side = asrBottom
     Left = 294
     Height = 24
-    Top = 140
+    Top = 122
     Width = 168
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
