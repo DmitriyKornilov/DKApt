@@ -5,7 +5,9 @@ unit UImages;
 interface
 
 uses
-  Classes, SysUtils, Controls, Forms, Buttons;
+  Classes, SysUtils, Controls, Forms, Buttons,
+
+  DK_CtrlUtils;
 
 type
 
@@ -33,18 +35,8 @@ implementation
 { TImages }
 
 function TImages.ForCurrentPPI: TImageList;
-var
-  PPI: Integer;
 begin
-  PPI:= Screen.PixelsPerInch;
-  if PPI<108 then
-    Result:= PX24
-  else if PPI<132 then
-    Result:= PX30
-  else if PPI<156 then
-    Result:= PX36
-  else
-    Result:= PX42;
+  Result:= ChooseImageListForScreenPPI(PX24, PX30, PX36, PX42);
 end;
 
 procedure TImages.ToButtons(const AButtons: array of TSpeedButton);
