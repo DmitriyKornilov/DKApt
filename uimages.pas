@@ -5,7 +5,7 @@ unit UImages;
 interface
 
 uses
-  Classes, SysUtils, Controls, Forms, Buttons,
+  Classes, SysUtils, Controls, Buttons,
 
   DK_CtrlUtils;
 
