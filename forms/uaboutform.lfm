@@ -504,7 +504,7 @@ object AboutForm: TAboutForm
       '     Lazarus IDE v3.2 (www.lazarus-ide.org)'
       ''
       'PNG-файлы получены с flaticon.com и freepik.com,  подробности '
-      'https://github.com/DmitriyKornilov/DKApt/blob/main/png/Icons_info.pdf'
+      'https://github.com/DmitriyKornilov/DKApt/blob/main/Icons_info.pdf'
       ''
       '      '
       ''
