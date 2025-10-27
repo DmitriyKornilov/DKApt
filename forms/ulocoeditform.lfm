@@ -8,9 +8,9 @@ object LocoEditForm: TLocoEditForm
   ClientHeight = 241
   ClientWidth = 470
   DesignTimePPI = 120
-  OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '3.2.0.0'
+  LCLVersion = '4.2.0.0'
+  OnShow = FormShow
   object ButtonPanel: TPanel
     AnchorSideTop.Control = Sec1CheckBox
     AnchorSideTop.Side = asrBottom
@@ -47,8 +47,8 @@ object LocoEditForm: TLocoEditForm
       ImageIndex = 7
       Margin = 5
       Spacing = 5
-      OnClick = CancelButtonClick
       ParentFont = False
+      OnClick = CancelButtonClick
     end
     object SaveButton: TSpeedButton
       AnchorSideTop.Control = CancelButton
@@ -66,8 +66,8 @@ object LocoEditForm: TLocoEditForm
       ImageIndex = 6
       Margin = 5
       Spacing = 5
-      OnClick = SaveButtonClick
       ParentFont = False
+      OnClick = SaveButtonClick
     end
     object ButtonPanelBevel: TBevel
       Left = 0

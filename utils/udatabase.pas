@@ -294,7 +294,7 @@ function TDataBase.LocoReconfig(var ALocoID: Integer; const ALocoNum: String;
   const ATypeID, ADepoID, AAptID, ASec1, ASec2, ASec3: Integer): Boolean;
 begin
   try
-    Result:= UpdateInt32ID('LOCO', 'IsCurrent', 'LocoID', ALocoID, 0, False{no commit});
+    Result:= UpdateByInt32ID('LOCO', 'IsCurrent', 'LocoID', ALocoID, 0, False{no commit});
     if not Result then Exit;
     LocoAdd(ALocoID, ALocoNum, ATypeID, ADepoID, AAptID, ASec1, ASec2, ASec3, False{no commit});
     QCommit;
@@ -435,12 +435,12 @@ end;
 
 function TDataBase.SettingLoad(const ASettingName: String): String;
 begin
-  Result:= ValueStrStrID('SETTINGS', 'SettingValue', 'SettingName', ASettingName);
+  Result:= ValueStrByStrID('SETTINGS', 'SettingValue', 'SettingName', ASettingName);
 end;
 
 procedure TDataBase.SettingUpdate(const ASettingName, ASettingValue: String);
 begin
-  UpdateStrID('SETTINGS', 'SettingValue', 'SettingName', ASettingName, ASettingValue, True {commit});
+  UpdateByStrID('SETTINGS', 'SettingValue', 'SettingName', ASettingName, ASettingValue, True {commit});
 end;
 
 

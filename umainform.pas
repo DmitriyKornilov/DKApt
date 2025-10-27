@@ -2,13 +2,18 @@ unit UMainForm;
 
 {$mode objfpc}{$H+}
 
+//{$DEFINE DEBUG}
+
 interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   Buttons, Menus, DividerBevel,
   //DK packages utils
-  {DK_HeapTrace,} DK_LCLStrRus, DK_Fonts, DK_CtrlUtils, DK_VSTTypes,
+  {$IFDEF DEBUG}
+  DK_HeapTrace,
+  {$ENDIF}
+  DK_LCLStrRus, DK_Fonts, DK_CtrlUtils, DK_VSTTypes,
   //Project utils
   UDataBase, UImages,
   //Forms
@@ -79,7 +84,10 @@ implementation
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
-  //HeapTraceOutputFile('trace.trc');
+  {$IFDEF DEBUG}
+  HeapTraceOutputFile('trace.trc');
+  {$ENDIF}
+
   Caption:= 'DKApt v.2.0.0 - Учет технического обслуживания систем АПТ';
   DBConnect;
 end;
@@ -244,15 +252,8 @@ begin
       2: CategoryForm:= FormOnPanelCreate(TReportForm, MainPanel);
     end;
 
-    //LogButton.Down:= False;
-    //ReportButton.Down:= False;
     if Assigned(CategoryForm) then
     begin
-      //case Category of
-      //  1: LogButton.Down:= True;
-      //  2: ReportButton.Down:= True;
-      //end;
-
       CategoryForm.Show;
       ViewUpdate;
     end;

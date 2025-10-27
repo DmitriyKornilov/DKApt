@@ -7,11 +7,11 @@ object MainForm: TMainForm
   ClientHeight = 303
   ClientWidth = 1095
   DesignTimePPI = 120
+  LCLVersion = '4.2.0.0'
+  WindowState = wsMaximized
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  LCLVersion = '3.2.0.0'
-  WindowState = wsMaximized
   object ToolPanel: TPanel
     Left = 2
     Height = 40
@@ -23,8 +23,8 @@ object MainForm: TMainForm
     BorderSpacing.Right = 2
     BevelOuter = bvNone
     BorderStyle = bsSingle
-    ClientHeight = 36
-    ClientWidth = 1087
+    ClientHeight = 40
+    ClientWidth = 1091
     ParentFont = False
     TabOrder = 0
     object AboutButton: TSpeedButton
@@ -39,9 +39,9 @@ object MainForm: TMainForm
       Constraints.MinWidth = 40
       Images = Images.PX24
       ImageIndex = 1
-      OnClick = AboutButtonClick
       ShowHint = True
       ParentShowHint = False
+      OnClick = AboutButtonClick
     end
     object ExitButton: TSpeedButton
       Cursor = crHandPoint
@@ -55,9 +55,9 @@ object MainForm: TMainForm
       Constraints.MinWidth = 40
       Images = Images.PX24
       ImageIndex = 0
-      OnClick = ExitButtonClick
       ShowHint = True
       ParentShowHint = False
+      OnClick = ExitButtonClick
     end
     object RefreshButton: TSpeedButton
       Cursor = crHandPoint
@@ -71,9 +71,9 @@ object MainForm: TMainForm
       Constraints.MinWidth = 40
       Images = Images.PX24
       ImageIndex = 2
-      OnClick = RefreshButtonClick
       ShowHint = True
       ParentShowHint = False
+      OnClick = RefreshButtonClick
     end
     object DividerBevel1: TDividerBevel
       Left = 1026

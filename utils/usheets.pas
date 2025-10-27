@@ -75,7 +75,7 @@ begin
   Writer.WriteText(R, 7, 'Количество выполненных работ (в секциях)', cbtOuter);
   Writer.WriteText(R, 8, 'Фамилия исполнителя', cbtOuter);
 
-  Writer.SetRowHeight(R, TITLE_HEIGHT);
+  Writer.RowHeight[R]:= TITLE_HEIGHT;
 end;
 
 procedure TReportSheet.PlaceNameDraw(const APlaceName: String);
@@ -128,7 +128,7 @@ begin
     Writer.WriteText(R, 6, ATONames[i], cbtOuter);
     Writer.WriteNumber(R, 7, ASectionCounts[i], cbtOuter);
     Writer.WriteText(R, 8, AManNames[i], cbtOuter);
-    Writer.SetRowHeight(R, ROWS_HEIGHT);
+    Writer.RowHeight[R]:= ROWS_HEIGHT;
   end;
 
   Writer.EndEdit;

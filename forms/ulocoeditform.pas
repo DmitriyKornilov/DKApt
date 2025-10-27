@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
   StdCtrls,
   //DK packages utils
-  DK_StrUtils, DK_Dialogs, DK_Vector,
+  DK_StrUtils, DK_MsgDialogs, DK_Vector,
   //Project utils
   UDataBase, UImages;
 
@@ -91,26 +91,26 @@ begin
 
   if SEmpty(LocoTypeComboBox.Text) then
   begin
-    ShowInfo('Не указана серия локомотива!');
+    MsgInform('Не указана серия локомотива!');
     Exit;
   end;
 
   LocoNum:= STrim(LocoNumEdit.Text);
   if SEmpty(LocoNum) then
   begin
-    ShowInfo('Не указан номер локомотива!');
+    MsgInform('Не указан номер локомотива!');
     Exit;
   end;
 
   if SEmpty(DepoComboBox.Text) then
   begin
-    ShowInfo('Не указано депо приписки локомотива!');
+    MsgInform('Не указано депо приписки локомотива!');
     Exit;
   end;
 
   if SEmpty(AptComboBox.Text) then
   begin
-    ShowInfo('Не указан тип системы АПТ!');
+    MsgInform('Не указан тип системы АПТ!');
     Exit;
   end;
 
@@ -176,7 +176,6 @@ begin
   Sec1CheckBox.Checked:= Sec1=1;
   Sec2CheckBox.Checked:= Sec2CheckBox.Visible and (Sec2=1);
   Sec3CheckBox.Checked:= Sec3CheckBox.Visible and (Sec3=1);
-
 end;
 
 end.
