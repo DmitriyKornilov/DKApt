@@ -1,26 +1,27 @@
 object AboutForm: TAboutForm
   Left = 550
-  Height = 400
+  Height = 429
   Top = 245
-  Width = 825
-  BorderStyle = bsSizeToolWin
+  Width = 850
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
   Caption = 'О программе'
-  ClientHeight = 400
-  ClientWidth = 825
+  ClientHeight = 429
+  ClientWidth = 850
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 850
   DesignTimePPI = 120
-  OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '3.2.0.0'
-  object Image1: TImage
+  OnShow = FormShow
+  object LazarusImage: TImage
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
-    Left = 6
+    Left = 8
     Height = 271
-    Top = 6
+    Top = 8
     Width = 181
     AutoSize = True
-    BorderSpacing.Bottom = 6
-    BorderSpacing.Around = 6
+    BorderSpacing.Around = 8
     Picture.Data = {
       0A544A706567496D616765AB350000FFD8FFE000104A46494600010202004E00
       4E0000FFC0001108010F00B503011100021101031101FFDB0084000604050605
@@ -454,64 +455,400 @@ object AboutForm: TAboutForm
       426BA48CA09083B49CE3802BCFAD53DA4DCBB9D508F2C523FFD9
     }
   end
-  object Label1: TLabel
-    AnchorSideLeft.Control = Image1
+  object AppNameLabel: TLabel
+    AnchorSideLeft.Control = LazarusImage
     AnchorSideLeft.Side = asrBottom
-    AnchorSideTop.Side = asrCenter
-    Left = 199
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 201
     Height = 20
-    Top = 9
-    Width = 582
+    Top = 8
+    Width = 641
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 12
-    BorderSpacing.Top = 6
-    BorderSpacing.Right = 6
-    Caption = 'DKApt v.2.0.0'
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 8
+    Caption = 'Application Name'
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
-  object Memo1: TMemo
-    AnchorSideLeft.Control = Label1
-    AnchorSideTop.Control = Label1
+  object ProjectNoteLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = AppNameLabel
     AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Owner
+    AnchorSideRight.Control = AppNameLabel
     AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
-    Left = 199
-    Height = 341
-    Top = 53
-    Width = 620
-    Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Top = 24
-    BorderSpacing.Right = 6
-    BorderSpacing.Bottom = 6
-    BorderStyle = bsNone
-    Color = clBtnFace
-    Lines.Strings = (
-      'Учет технического обслуживания систем АПТ'
-      ''
-      'Проект:'
-      '     https://github.com/DmitriyKornilov/DKApt'
-      ''
-      'Разработчик: '
-      '     Дмитрий Корнилов (dakor2017@yandex.ru)'
-      ''
-      'Применено:'
-      '     Free Pascal Compiler v3.2.2 (www.freepascal.org)'
-      '     Lazarus IDE v3.2 (www.lazarus-ide.org)'
-      ''
-      'PNG-файлы получены с flaticon.com и freepik.com,  подробности '
-      'https://github.com/DmitriyKornilov/DKApt/blob/main/png/Icons_info.pdf'
-      ''
-      '      '
-      ''
-      '     '
-    )
-    ReadOnly = True
-    TabOrder = 0
-    TabStop = False
+    Left = 201
+    Height = 20
+    Top = 40
+    Width = 641
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'Project Note'
+    WordWrap = True
+  end
+  object ProjectLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = ProjectNoteLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 201
+    Height = 20
+    Top = 72
+    Width = 641
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'Проект:'
+    WordWrap = True
+  end
+  object ProjectURLLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = ProjectLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 96
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 4
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object AutorLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = ProjectURLLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 201
+    Height = 20
+    Top = 128
+    Width = 641
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'Разработчик:'
+    WordWrap = True
+  end
+  object AutorNameLabel: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = AutorLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 221
+    Height = 20
+    Top = 152
+    Width = 81
+    BorderSpacing.Top = 4
+    Caption = 'Autor Name'
+    WordWrap = True
+  end
+  object AutorMailLabel: TLabel
+    AnchorSideLeft.Control = AutorMailBeginLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AutorLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 311
+    Height = 20
+    Top = 152
+    Width = 29
+    BorderSpacing.Top = 4
+    Caption = 'mail'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object AutorMailEndLabel: TLabel
+    AnchorSideLeft.Control = AutorMailLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AutorLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 340
+    Height = 20
+    Top = 152
+    Width = 5
+    BorderSpacing.Top = 4
+    Caption = ')'
+    WordWrap = True
+  end
+  object AutorMailBeginLabel: TLabel
+    AnchorSideLeft.Control = AutorNameLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = AutorLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 302
+    Height = 20
+    Top = 152
+    Width = 9
+    BorderSpacing.Top = 4
+    Caption = ' ('
+    WordWrap = True
+  end
+  object UsedLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = AutorNameLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 201
+    Height = 20
+    Top = 184
+    Width = 641
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'Применено:'
+    WordWrap = True
+  end
+  object CompilerVerLabel: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = UsedLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 221
+    Height = 20
+    Top = 208
+    Width = 61
+    BorderSpacing.Top = 4
+    Caption = 'Compiler'
+    WordWrap = True
+  end
+  object CompilerURLBeginLabel: TLabel
+    AnchorSideLeft.Control = CompilerVerLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = UsedLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 282
+    Height = 20
+    Top = 208
+    Width = 9
+    BorderSpacing.Top = 4
+    Caption = ' ('
+    WordWrap = True
+  end
+  object CompilerURLLabel: TLabel
+    AnchorSideLeft.Control = CompilerURLBeginLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = UsedLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 291
+    Height = 20
+    Top = 208
+    Width = 23
+    BorderSpacing.Top = 4
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object CompilerURLEndLabel: TLabel
+    AnchorSideLeft.Control = CompilerURLLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = UsedLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 314
+    Height = 20
+    Top = 208
+    Width = 5
+    BorderSpacing.Top = 4
+    Caption = ')'
+    WordWrap = True
+  end
+  object LazarusVerLabel: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = CompilerVerLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 221
+    Height = 20
+    Top = 232
+    Width = 49
+    BorderSpacing.Top = 4
+    Caption = 'Lazarus'
+    WordWrap = True
+  end
+  object LazarusURLBeginLabel: TLabel
+    AnchorSideLeft.Control = LazarusVerLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CompilerVerLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 270
+    Height = 20
+    Top = 232
+    Width = 9
+    BorderSpacing.Top = 4
+    Caption = ' ('
+    WordWrap = True
+  end
+  object LazarusURLLabel: TLabel
+    AnchorSideLeft.Control = LazarusURLBeginLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CompilerVerLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 279
+    Height = 20
+    Top = 232
+    Width = 23
+    BorderSpacing.Top = 4
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object LazarusURLEndLabel: TLabel
+    AnchorSideLeft.Control = LazarusURLLabel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CompilerVerLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 302
+    Height = 20
+    Top = 232
+    Width = 5
+    BorderSpacing.Top = 4
+    Caption = ')'
+    WordWrap = True
+  end
+  object PNGInfoLabel: TLabel
+    AnchorSideLeft.Control = AppNameLabel
+    AnchorSideTop.Control = LazarusVerLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Left = 201
+    Height = 20
+    Top = 264
+    Width = 641
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 12
+    Caption = 'PNG Info'
+    WordWrap = True
+  end
+  object PNGURLLabel: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = PNGInfoLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 288
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 4
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object PNGURLAdd1Label: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = PNGURLLabel
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 308
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object PNGURLAdd2Label: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = PNGURLAdd1Label
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 328
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object PNGURLAdd3Label: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = PNGURLAdd2Label
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 348
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
+  end
+  object PNGURLAdd4Label: TLabel
+    AnchorSideLeft.Control = ProjectURLLabel
+    AnchorSideTop.Control = PNGURLAdd3Label
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = AppNameLabel
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 20
+    Top = 368
+    Width = 621
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Bottom = 20
+    Caption = 'link'
+    Font.Color = clNavy
+    Font.Style = [fsUnderline]
+    ParentFont = False
+    WordWrap = True
   end
 end

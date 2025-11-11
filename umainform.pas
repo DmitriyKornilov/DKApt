@@ -77,9 +77,6 @@ implementation
 
 {$R *.lfm}
 
-{TODO: обновление данных при редактировании справочников!!!}
-
-
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -88,7 +85,7 @@ begin
   HeapTraceOutputFile('trace.trc');
   {$ENDIF}
 
-  Caption:= 'DKApt v.2.0.0 - Учет технического обслуживания систем АПТ';
+  Caption:= MAIN_CAPTION + ' - ' + PROJECT_NOTE;
   DBConnect;
 end;
 
@@ -110,7 +107,6 @@ begin
     RefreshButton, AboutButton, ExitButton,
     DictionaryButton, ReportButton, LogButton
   ]);
-
 
   DictionaryMenu.Images:= Images.ForCurrentPPI;
 
